@@ -8,10 +8,10 @@
         count++;
 
         try {
-            let res = await shopifyMethods.createCheckout();
-            console.log(res)
-            console.log(res.webUrl)
-            console.log(res.id)
+            let resCheckout = await shopifyMethods.checkout();
+            let resCart = await shopifyMethods.cart();
+            console.log(resCheckout)
+            console.log(resCart)
         } catch (error) {
             console.error(error);
         }

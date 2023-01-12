@@ -1,3 +1,5 @@
+import type IPrice from "./IPrice";
+
 export default interface ICheckout {
     completedAt?: string,
     customAttributes?: any[];
@@ -5,11 +7,12 @@ export default interface ICheckout {
     lineItems?: any[];
 
     note?: string;
-    totalPriceV2?: ITotalPrice;
+    totalPriceV2?: IPrice;
     webUrl?: string;
+    addLineItems?: Function;
+    removeLineItems?: Function;
+    replaceLineItems?: Function;
+    updateLineItems?: Function;
+    clear?: Function;
 }
 
-interface ITotalPrice {
-    amount?: number;
-    currencyCode?: string;
-}
